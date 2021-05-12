@@ -61,10 +61,10 @@ class CNN(nn.Module):
         self.pool = nn.MaxPool2d(3, 3)
 
         #16 channels, not sure about 4x4
-        self.fc = StartingNetwork(13440, output_dim
+        self.fc = StartingNetwork(13440, output_dim)
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = self.pool(F.relu(self.conv3(x)))
-	x = self.fc.forward(x)
+        x = self.fc.forward(x)
         return x
