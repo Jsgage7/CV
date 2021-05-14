@@ -14,7 +14,9 @@ class StartingNetwork(torch.nn.Module):
     def __init__(self, input_dim, output_dim):
         super().__init__()
         self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(input_dim, 512)
+        self.fc6 = nn.Linear(input_dim, 2048)
+        self.fc5 = nn.Linear(2048, 1024)
+        self.fc1 = nn.Linear(1024, 512)
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, 128)
         self.fc4 = nn.Linear(128, output_dim)
@@ -22,6 +24,12 @@ class StartingNetwork(torch.nn.Module):
 
     def forward(self, x):
         x = self.flatten(x)
+        x = self.fc6(x)
+        x = F.relu(x)
+
+        x = self.fc5(x)
+        x = F.relu(x)
+
         x = self.fc1(x)
         x = F.relu(x)
 
@@ -65,7 +73,7 @@ class CNN(nn.Module):
         self.pool4 = nn.MaxPool2d(2,2)
 
         #16 channels, not sure about 4x4
-        self.fc = StartingNetwork(9360, output_dim)
+        self.fc = StartingNetwork(11232, output_dim)
 
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
