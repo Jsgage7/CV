@@ -43,28 +43,34 @@ class CNN(nn.Module):
     """
     def __init__(self, input_channels, output_dim):
         super().__init__()
-	#filter is 5, output channels is 6 (both can be changed)
-        self.conv1 = nn.Conv2d(input_channels, 6, 5) 
+
+        #filter is 5, output channels is 6 (both can be changed)
+        self.conv1 = nn.Conv2d(input_channels, 6, 5)
 
         #the filter dimmensions of the pooling layer (here 2x2, can be changed)
-        self.pool = nn.MaxPool2d(2, 2)
+        self.pool = nn.MaxPool2d(3, 3)
 
 
         #16 output channels, filter still at 5
         self.conv2 = nn.Conv2d (6, 12, 5)
 
-        self.pool = nn.MaxPool2d(2, 2)
+        self.pool2 = nn.MaxPool2d(3, 3)
 
                 #16 output channels, filter still at 5
-        self.conv3 = nn.Conv2d (12, 24, 4)
+        self.conv3 = nn.Conv2d (12, 24, 5)
 
-        self.pool = nn.MaxPool2d(3, 3)
+        self.pool3 = nn.MaxPool2d(2, 2)
+
+        self.conv4 = nn.Conv2d(24, 48, 5)
+        self.pool4 = nn.MaxPool2d(2,2)
 
         #16 channels, not sure about 4x4
-        self.fc = StartingNetwork(13440, output_dim)
+        self.fc = StartingNetwork(9360, output_dim)
+
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = self.pool(F.relu(self.conv3(x)))
+        x = self.pool2(F.relu(self.conv2(x)))
+        x = self.pool3(F.relu(self.conv3(x)))
+        x = self.pool4(F.relu(self.conv4(x)))
         x = self.fc.forward(x)
         return x
