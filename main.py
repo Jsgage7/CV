@@ -1,12 +1,23 @@
 import argparse
+<<<<<<< HEAD
 import os
 
+=======
+
+import os
+
+#lsfjalsdghlksghklghsaklghsadklghas fkldwgasglasgjslkfjsfklas 
+>>>>>>> a5b3c73b55f07b1492e2c15ca234576f515625db
 
 import constants
 from datasets.StartingDataset import StartingDataset
 from networks.StartingNetwork import StartingNetwork
 from train_functions.starting_train import starting_train
 
+<<<<<<< HEAD
+=======
+os.chdir('/Users/candicecai/Desktop/Sophomore-Spring-ACM-AI-Project/projects-skeleton-code')
+>>>>>>> a5b3c73b55f07b1492e2c15ca234576f515625db
 
 SUMMARIES_PATH = "training_summaries"
 

@@ -4,7 +4,11 @@ import torch.optim as optim
 import torch.utils.tensorboard
 from torch.utils.tensorboard import SummaryWriter
 import sys
+<<<<<<< HEAD
 sys.path.insert(1, '/Users/vinayshukla/Desktop/cassav-project/projects-skeleton-code/networks')
+=======
+sys.path.insert(1, '/content/projects-skeleton-code/networks')
+>>>>>>> a5b3c73b55f07b1492e2c15ca234576f515625db
 from StartingNetwork import CNN
 
 def initializationFunction(training_dataset, val_dataset):
