@@ -18,7 +18,7 @@ python main.py
 
 ### Running the Code on Google Colab
 
-[This notebook](https://colab.research.google.com/drive/1zkxwgDItHv92iD07M8o8FlfJ0ZxLUDly?usp=sharing) will walk you through setting the skeleton code up on Google Colab.
+[This notebook](https://colab.research.google.com/drive/1tDwxRmsFZz1To41ZPqLqKtm1gwOEY-BL?usp=sharing) will walk you through setting the code up on Google Colab.
 
 ## Downloading the Dataset From Kaggle
 
