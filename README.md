@@ -1,4 +1,4 @@
-# ACM AI SPRING 2021 Project Skeleton Code
+# ACM AI Computer Vision Project
 
 ## Setup
 
@@ -7,8 +7,6 @@
 2. Install PyTorch.
 
 3. As you work on the project, you will end up installing many more packages.
-
-## Running the Skeleton Code
 
 ### Running the Code Locally
 
@@ -28,7 +26,7 @@ python main.py
 
 1. Go to [kaggle.com](kaggle.com) and create an account.
 
-2. Join either the [Cassava leaf](https://www.kaggle.com/c/cassava-leaf-disease-classification) or [Humpback whale](https://www.kaggle.com/c/humpback-whale-identification) competition.
+2. Join the [Cassava leaf](https://www.kaggle.com/c/cassava-leaf-disease-classification) project.
 
 3. In the data tab, you should be able to download the data as a zip file.
 
@@ -51,6 +49,5 @@ python main.py
 3. Download the zipped dataset.
 
    ```
-   # Use humpback-whale-identification for 🐋 dataset
    kaggle competitions download -c cassava-leaf-disease-classification
    ```
